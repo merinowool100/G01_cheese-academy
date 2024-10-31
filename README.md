@@ -5,6 +5,7 @@ Landing page for the cheese-academy
 Landing page
 
 ## Demo
+https://merinowool100.github.io/G01_cheese-academy/
 
 ## Key features
 - Animated graphs - bar-chart and circle-chart enabled by CSS without JavaScript.
