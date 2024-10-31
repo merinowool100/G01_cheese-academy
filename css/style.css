@@ -1,0 +1,956 @@
+@import url('https://fonts.googleapis.com/earlyaccess/notosansjapanese.css');
+@import url('https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c');
+
+/* 全体 */
+body {
+  font-family: "notosansjapanese", 'M PLUS Rounded 1c', sans-serif;
+  background-color: rgb(252, 205, 75);
+  min-width: 400px;
+}
+
+img {
+  width: 100vw;
+}
+
+.section {
+  height: 150px;
+}
+
+.space {
+  height: 30px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 28px;
+  text-decoration: underline;
+}
+
+
+/* HEADER--------------------------------------------------------------- */
+#header-logo {
+  width: 150px;
+}
+
+#header-title {
+  font-size: 36px;
+  font-weight: bold;
+}
+
+.header-container {
+  height: 150px;
+  padding: 10px;
+  background-color: rgb(252, 205, 75);
+  position: sticky;
+  top: 0;
+  left: 0;
+  display: grid;
+  grid-template-columns: 150px 1fr 100px;
+  align-items: center;
+}
+
+/* MENU----------------------------------------------------------------- */
+/* チェックボックスを非表示にする */
+.drawer_hidden {
+  display: none;
+}
+
+/* ハンバーガーアイコンの設置スペース */
+.drawer_open {
+  display: flex;
+  height: 60px;
+  width: 60px;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 10000;
+  /* 重なり順を一番上にする */
+  cursor: pointer;
+}
+
+/* ハンバーガーメニューのアイコン */
+.drawer_open span,
+.drawer_open span:before,
+.drawer_open span:after {
+  content: '';
+  display: block;
+  height: 3px;
+  width: 25px;
+  border-radius: 3px;
+  background: #333;
+  transition: 0.5s;
+  position: absolute;
+}
+
+/* 三本線の一番上の棒の位置調整 */
+.drawer_open span:before {
+  bottom: 8px;
+}
+
+/* 三本線の一番下の棒の位置調整 */
+.drawer_open span:after {
+  top: 8px;
+}
+
+/* アイコンがクリックされたら真ん中の線を透明にする */
+#drawer_input:checked~.drawer_open span {
+  background: rgba(255, 255, 255, 0);
+}
+
+/* アイコンがクリックされたらアイコンが×印になように上下の線を回転 */
+#drawer_input:checked~.drawer_open span::before {
+  bottom: 0;
+  transform: rotate(45deg);
+}
+
+#drawer_input:checked~.drawer_open span::after {
+  top: 0;
+  transform: rotate(-45deg);
+}
+
+/* メニューのデザイン*/
+.nav_content {
+  width: 30%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  right: -100%;
+  /* メニューを画面の外に飛ばす */
+  z-index: 9999;
+  background: #fff;
+  transition: .5s;
+  padding-top: 150px;
+  padding-left: 20px;
+  padding-right: 20px;
+  font-size: 28px;
+  text-align: center;
+}
+
+/* メニュー黒ポチを消す */
+.nav_list {
+  list-style: none;
+}
+
+/* アイコンがクリックされたらメニューを表示 */
+#drawer_input:checked~.nav_content {
+  right: 0;
+  /* メニューを画面に入れる */
+}
+
+
+
+/* TOPにあてるCSS */
+.top-image {
+  min-width: 400px;
+  height: 500px;
+  position: relative;
+  margin: 10px;
+  border-radius: 10px;
+  z-index: -100;
+}
+
+.image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  opacity: 0;
+  background-size: cover;
+  background-position: center center;
+  animation: image-switch-animation 25s infinite;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 28px;
+  text-shadow: 1px 1px rgb(133, 133, 133);
+  border-radius: 10px;
+}
+
+.image::after {
+  content: "Let's make cheese that changes the world.";
+  color: white;
+  text-align: center;
+  padding: 20px;
+
+}
+
+.src1 {
+  background-image: url(./img/img1.jpg);
+}
+
+.src2 {
+  background-image: url(./img/img2.jpg);
+}
+
+.src3 {
+  background-image: url(./img/img3.jpg);
+}
+
+.src4 {
+  background-image: url(./img/img4.jpg);
+}
+
+.src5 {
+  background-image: url(./img/img5.jpg);
+}
+
+@keyframes image-switch-animation {
+  0% {
+    opacity: 0;
+  }
+
+  5% {
+    opacity: 1;
+  }
+
+  25% {
+    opacity: 1;
+  }
+
+  30% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+.image:nth-of-type(1) {
+  animation-delay: 0s;
+}
+
+.image:nth-of-type(2) {
+  animation-delay: 5s;
+}
+
+.image:nth-of-type(3) {
+  animation-delay: 10s;
+}
+
+.image:nth-of-type(4) {
+  animation-delay: 15s;
+}
+
+.image:nth-of-type(5) {
+  animation-delay: 20s;
+}
+
+
+/* INFORMATION----------------------------------------------------- */
+.main-container {
+  margin: 10px;
+  padding: 10px;
+  border-radius: 10px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 10px;
+  background-color: white;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.card-name {
+  font-size: 30px;
+  font-weight: bold;
+  color: rgb(67, 63, 49);
+  text-shadow: 2px 2px rgb(209, 209, 209);
+  font-family: "M PLUS Rounded 1c";
+}
+
+.card-explanation {
+  font-size: 20px;
+  color: rgb(67, 63, 49);
+  text-shadow: 1px 1px rgb(192, 191, 191);
+  font-family: "notosansjapanese";
+  padding: 10px;
+}
+
+.main-list1 {
+  min-width: 300px;
+  min-height: 300px;
+  border-radius: 10px;
+  background-image: url(./img/about_01.jpg);
+  background-size: cover;
+  background-color: rgb(255, 255, 255, 0.7);
+  background-blend-mode: lighten;
+  text-align: center;
+  order: 1;
+}
+
+.main-list1 p {
+  width: stretch;
+  height: 94%;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main-list1 p:nth-of-type(2) {
+  display: none;
+}
+
+.main-list1:hover p:nth-of-type(1) {
+  display: none;
+}
+
+.main-list1:hover p:nth-of-type(2) {
+  display: flex;
+  background-color: rgb(237, 237, 237);
+}
+
+
+.main-list2 {
+  min-width: 300px;
+  min-height: 300px;
+  border-radius: 10px;
+  background-image: url(./img/about_02.jpg);
+  background-size: cover;
+  background-color: rgb(255, 255, 255, 0.7);
+  background-blend-mode: lighten;
+  text-align: center;
+  order: 2;
+}
+
+.main-list2 p {
+  width: stretch;
+  height: 94%;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main-list2 p:nth-of-type(2) {
+  display: none;
+}
+
+.main-list2:hover p:nth-of-type(1) {
+  display: none;
+}
+
+.main-list2:hover p:nth-of-type(2) {
+  display: flex;
+  background-color: rgb(237, 237, 237);
+}
+
+.main-list3 {
+  min-width: 300px;
+  min-height: 300px;
+  border-radius: 10px;
+  background-image: url(./img/about_03.jpg);
+  background-size: cover;
+  background-color: rgb(255, 255, 255, 0.7);
+  background-blend-mode: lighten;
+  text-align: center;
+  order: 3;
+}
+
+.main-list3 p {
+  width: stretch;
+  height: 94%;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main-list3 p:nth-of-type(2) {
+  display: none;
+}
+
+.main-list3:hover p:nth-of-type(1) {
+  display: none;
+}
+
+.main-list3:hover p:nth-of-type(2) {
+  display: flex;
+  background-color: rgb(237, 237, 237);
+}
+
+.main-list4 {
+  min-width: 300px;
+  min-height: 300px;
+  border-radius: 10px;
+  background-image: url(./img/about_04.jpg);
+  background-size: cover;
+  background-color: rgb(255, 255, 255, 0.8);
+  background-blend-mode: lighten;
+  text-align: center;
+  order: 4;
+}
+
+.main-list4 p {
+  width: stretch;
+  height: 94%;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main-list4 p:nth-of-type(2) {
+  display: none;
+}
+
+.main-list4:hover p:nth-of-type(1) {
+  display: none;
+}
+
+.main-list4:hover p:nth-of-type(2) {
+  display: flex;
+  background-color: rgb(237, 237, 237);
+}
+
+/* Graduates------------------------------------------------------*/
+
+/*------------------------------------
+  pie chart
+------------------------------------*/
+@media screen and (min-width: 751px) {
+  .pie-chart-wrap {
+    z-index: -15;
+    box-sizing: border-box;
+    margin: 10px;
+    min-width: 400px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+  }
+}
+
+.box {
+  z-index: -10;
+  box-sizing: border-box;
+  position: relative;
+  min-width: 200px;
+  width: 33.3333333333%;
+  height: 300px;
+  border-radius: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  background: #fff;
+  -webkit-box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+@media screen and (max-width: 750px) {
+  .box {
+    width: auto;
+    position: center;
+    box-sizing: border-box;
+    margin: 10px;
+  }
+}
+
+@media screen and (min-width: 751px) {
+  .box+.box {
+    margin-left: 20px;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .box+.box {
+    margin-top: 20px;
+  }
+}
+
+*/ .box .percent {
+  position: relative;
+  width: 150px;
+  height: 150px;
+}
+
+.box .percent svg {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  -webkit-transform: rotate(-90deg);
+  transform: rotate(-90deg);
+}
+
+.box .percent svg circle {
+  position: relative;
+  fill: none;
+  stroke-width: 10;
+  stroke: #f3f3f3;
+  stroke-dasharray: 440;
+  stroke-dashoffset: 0;
+  stroke-linecap: round;
+}
+
+.box .percent .number {
+  position: absolute;
+  top: -5%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  color: #111;
+}
+
+.box .percent .number .title {
+  font-size: 50px;
+}
+
+.box .percent .number .title span {
+  font-size: 22px;
+}
+
+.box .text {
+  padding: 10px 0 0;
+  text-align: center;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.box.blue .percent .line {
+  stroke-dashoffset: 52.8;
+  stroke: #03a9f4;
+}
+
+.box.red .percent .line {
+  stroke-dashoffset: 154;
+  stroke: #ff3051;
+}
+
+.box.green .percent .line {
+  stroke-dashoffset: 321.2;
+  stroke: #1fd26c;
+}
+
+.is-animated .line {
+  -webkit-animation: circleAnim 1s forwards;
+  animation: circleAnim 1s forwards;
+}
+
+@-webkit-keyframes circleAnim {
+  0% {
+    stroke-dasharray: 0 440;
+  }
+
+  99.9%,
+  to {
+    stroke-dasharray: 440 440;
+  }
+}
+
+@keyframes circleAnim {
+  0% {
+    stroke-dasharray: 0 440;
+  }
+
+  99.9%,
+  to {
+    stroke-dasharray: 440 440;
+  }
+}
+
+/*------------------------------------
+  bar graph
+------------------------------------*/
+.space-i {
+  text-align: center;
+}
+
+.bar-graph-wrap {
+  z-index: -15;
+  position: relative;
+  -webkit-box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+}
+
+.bar-graph-wrap .graph {
+  height: 50px;
+  position: absolute;
+  left: 0;
+  border-radius: 0 4px 4px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding: 10px;
+  -webkit-animation: graphAnim 2.5s forwards;
+  animation: graphAnim 2.5s forwards;
+}
+
+.bar-graph-wrap .graph span {
+  font-size: 14px;
+  color: #ffffff;
+}
+
+@media screen and (max-width: 750px) {
+  .bar-graph-wrap .graph span {
+    font-size: 14px;
+  }
+}
+
+.bar-graph-wrap .graph.gr1 {
+  top: 15%;
+  background: lightgray;
+  width: 88%;
+}
+
+.bar-graph-wrap .graph.gr2 {
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  background: lightgray;
+  width: 65%;
+}
+
+.bar-graph-wrap .graph.gr3 {
+  bottom: 15%;
+  background: lightgray;
+  width: 27%;
+}
+
+.bar-graph-wrap .graph.gr4 {
+  top: 15%;
+  background: lightgray;
+  width: 88%;
+}
+
+.bar-graph-wrap .graph.gr5 {
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  background: lightgray;
+  width: 65%;
+}
+
+.bar-graph-wrap .graph.gr6 {
+  bottom: 15%;
+  background: #fba717;
+  width: 27%;
+}
+
+.is-animated .bar-graph-wrap .graph {
+  -webkit-animation: graphAnim 2.5s forwards;
+  animation: graphAnim 2.5s forwards;
+}
+
+@-webkit-keyframes graphAnim {
+  0% {
+    -webkit-transform: translateX(-100%);
+    transform: translateX(-100%);
+  }
+
+  100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+
+@keyframes graphAnim {
+  0% {
+    -webkit-transform: translateX(-100%);
+    transform: translateX(-100%);
+  }
+
+  100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+
+.bar-graph-wrap.vertical {
+  height: 500px;
+  margin: 10px;
+  min-width: 400px;
+  border-radius: 10px;
+  background-color: white;
+  box-sizing: border-box;
+}
+
+.bar-graph-wrap.vertical .graph {
+  width: 10%;
+  bottom: 0;
+  border-radius: 10px 10px 0 0;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: reverse;
+  -ms-flex-direction: column-reverse;
+  flex-direction: column-reverse;
+}
+
+.bar-graph-wrap.vertical .graph .name {
+  font-size: 14px;
+}
+
+.bar-graph-wrap.vertical .graph.gr1 {
+  left: 4%;
+  height: 5%;
+  top: auto;
+  bottom: 30px;
+}
+
+.bar-graph-wrap.vertical .graph.gr2 {
+  left: 20%;
+  top: auto;
+  height: 15%;
+  bottom: 30px;
+}
+
+.bar-graph-wrap.vertical .graph.gr3 {
+  left: 36%;
+  top: auto;
+  height: 39%;
+  bottom: 30px;
+}
+
+.bar-graph-wrap.vertical .graph.gr4 {
+  left: 52%;
+  height: 58%;
+  top: auto;
+  bottom: 30px;
+}
+
+.bar-graph-wrap.vertical .graph.gr5 {
+  left: 68%;
+  top: auto;
+  height: 70%;
+  bottom: 30px;
+}
+
+.bar-graph-wrap.vertical .graph.gr6 {
+  left: 84%;
+  top: auto;
+  height: 80%;
+  bottom: 30px;
+}
+
+.is-animated .bar-graph-wrap.vertical .graph {
+  -webkit-animation: graphAnim02 3s forwards;
+  animation: graphAnim02 3s forwards;
+}
+
+@-webkit-keyframes graphAnim02 {
+  0% {
+    -webkit-transform: translateY(100%);
+    transform: translateY(100%);
+  }
+
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+@keyframes graphAnim02 {
+  0% {
+    -webkit-transform: translateY(100%);
+    transform: translateY(100%);
+  }
+
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+/* ACCESS----------------------------------------------------------- */
+.map {
+  min-width: 400px;
+  height: 50vh;
+  border-radius: 10px;
+  margin: 10px;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+
+}
+
+.map iframe {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+}
+
+
+/* CONTACT------------------------------------------------------------ */
+
+.contact-container {
+  min-width: 400px;
+  height: 350px;
+  margin: 10px;
+  background-color: white;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+
+
+}
+
+.form {
+  width: 100%;
+  margin-left: 30px;
+  margin-right: 30px;
+  display: flex;
+  vertical-align: middle;
+  justify-content: center;
+
+}
+
+form table {
+  border-spacing: 0;
+
+}
+
+form td {
+  padding: 10px;
+  border-bottom: 1px solid #EEE;
+  vertical-align: middle;
+}
+
+form th {
+  padding: 15px;
+  border-bottom: 1px solid #EEE;
+  text-align: left;
+  font-weight: normal;
+  vertical-align: top;
+  width: 5em;
+}
+
+.hissu,
+.ninni {
+  padding-right: 4em;
+  position: relative;
+}
+
+.hissu::after,
+.ninni::after {
+  content: "Must";
+  display: inline-block;
+  position: absolute;
+  right: 10px;
+  top: 15px;
+  border: 1px solid #CCC;
+  padding: 0 5px;
+  font-size: 85%;
+  background: #d40000;
+  color: #FFF;
+}
+
+.input[type="text"],
+form textarea {
+  background: #f2f2f2;
+  border: 1px solid #999;
+  width: 300px;
+  height: 30px;
+  padding: 3px;
+  box-sizing: border-box;
+}
+
+select {
+  background: #f2f2f2;
+  border: 1px solid #999;
+  width: 300px;
+  height: 30px;
+  padding: 3px;
+  box-sizing: border-box;
+}
+
+.buttonwrap {
+  display: flex;
+  justify-content: center;
+}
+
+.btn {
+  display: inline-block;
+  border-radius: 5%;
+  /* 角丸       */
+  font-size: 85%;
+  /* 文字サイズ */
+  text-align: center;
+  /* 文字位置   */
+  margin: 10px;
+  cursor: pointer;
+  /* カーソル   */
+  padding: 10px 10px;
+  /* 余白       */
+  border-radius: 10px;
+  border-color: transparent;
+  background: #ff7f00;
+  /* 背景色     */
+  color: #ffffff;
+  /* 文字色     */
+  line-height: 1em;
+  /* 1行の高さ  */
+  opacity: 1;
+  /* 透明度     */
+  transition: .3s;
+  /* なめらか変化 */
+  box-shadow: 2px 2px 5px rgb(252, 205, 75);
+  /* 影の設定 */
+
+}
+
+.btn:hover {
+  box-shadow: none;
+  /* カーソル時の影消去 */
+  opacity: 0.8;
+  /* カーソル時透明度 */
+}
+
+
+
+@media (max-width:500px) {
+
+  form table,
+  form tr,
+  form th,
+  form td {
+    display: block;
+  }
+
+  form th {
+    width: auto;
+    border-bottom: none;
+    padding: 13px 10px 0 5em;
+  }
+
+  .hissu::after,
+  .ninni::after {
+    right: auto;
+    left: 15px;
+  }
+
+  form input[type="text"],
+  form textarea {
+    width: calc(100% - 10px);
+  }
+}
+
+.footer {
+  text-align: center;
+  color: black;
+  background-color: rgb(252, 205, 75);
+}

@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/reset.css">
+  <link rel="stylesheet" href="./css/style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <title>Cheese Academy</title>
+</head>
+
+<body>
+
+
+
+  <!-- HEADER -->
+  <!-- 上部に固定する -->
+  <header class="header-container">
+    <div>
+      <img src="./css/img/logo.png" id="header-logo">
+    </div>
+    <div id="header-title">Cheese Academy</div>
+
+
+    <!-- ハンバーガーメニュー -->
+    <div class="nav">
+
+      <!-- ハンバーガーメニューの表示・非表示を切り替えるチェックボックス -->
+      <input id="drawer_input" class="drawer_hidden" type="checkbox">
+
+      <!-- ハンバーガーアイコン -->
+      <label for="drawer_input" class="drawer_open"><span></span></label>
+
+      <!-- メニュー -->
+      <nav class="nav_content">
+        <ul class="nav_list">
+          <li class="nav_item"><a href="#information">Information</a></li>
+          <br>
+          <li class="nav_item"><a href="#graduates">Graduates</a></li>
+          <br>
+          <li class="nav_item"><a href="#achievements">Achievements</a></li>
+          <br>
+          <li class="nav_item"><a href="#access">Access</a></li>
+          <br>
+          <li class="nav_item"><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+
+
+  </header>
+
+  <!-- TOP IMAGE -->
+  <!-- 背景画像が自動的に入れ替わる -->
+  <!-- 背景画像の上にメッセージを表示する。但しそのメッセージは画像が切り替わっても変えない -->
+  <!-- ウィンドウのサイズによって大きさを変える  -->
+
+  <div class="top-image">
+    <div class="image src1"></div>
+    <div class="image src2"></div>
+    <div class="image src3"></div>
+    <div class="image src4"></div>
+    <div class="image src5"></div>
+  </div>
+
+
+  <!-------------------------------------------------
+        INFORMATION
+    -------------------------------------------------->
+  <!-- グリッドにして画像をタイル表示し、その上に何の説明(About, Course, News)なのかを表示 -->
+  <!-- グリッドはレスポンシブにする -->
+  <!-- 画像をクリックした際に詳細な説明が現れるようにする -->
+  <div class="space" id="information"></div>
+  <div class="section"></div>
+  <div class="space">Information</div>
+  <div class="space"></div>
+
+
+  <div class="main-container">
+    <div class="main-list1">
+      <p class="card-name">About</p>
+      <p class="card-explanation">
+        チーズの養成学校<br><br>チーズのすばらしさを、自給自足を通して、できるだけ多くの人に知っていただきたい。そして、食卓にはいつもチーズがあった、あの頃の当たり前をこの手で取り戻したい。そんな思いから、チーズ職人養成学校「チーズアカデミーTOKYO」は歩みを始めています。<br><br>卒業後は、チーズ自給自足のバックアップはもちろんのこと、チーズ職人への就職・転職もサポートします。
+      </p>
+    </div>
+    <div class="main-list2">
+      <p class="card-name">Course</p>
+      <p class="card-explanation">
+        未経験者でも安心のカリキュラム<br><br>未経験からでもスタートができるよう、カリキュラムは多くの専門家や現役チーズ職人のアドバイスのもと、作られました。</p>
+    </div>
+    <div class="main-list3">
+      <p class="card-name">Experience</p>
+      <p class="card-explanation">
+        本格的な農園を使った実地研修<br><br>チーズアカデミーでは、本格的な農園を使った実地研修を行うことができます。プロとして活躍するチーズ職人も使用するような、広大で環境も整った農園を余すところなく使い、卒業時には本格的なチーズを自分の力で作れる実践力の養成を目指します。
+      </p>
+    </div>
+    <div class="main-list4">
+      <p class="card-name">Learning</p>
+      <p class="card-explanation">
+        必要な知識もしっかり習得<br><br>チーズ作りには、しっかりとした食に関する知識が欠かせません。チーズアカデミーでは、一流講師陣による、チーズ作りに必要ないろはを余すところなく学べます。チーズそのものでなく、栄養学全般を学ぶことも可能ですので、チーズ以外への展開も夢ではないでしょう。
+      </p>
+    </div>
+  </div>
+
+
+  <!-- CHART1 -->
+  <!-- 開校後、これまでに受講した人の数の棒グラフを入れる -->
+  <div class="space" id="graduates"></div>
+  <div class="section"></div>
+  <div class="space">Number of graduates</div>
+  <br>
+  <div class="space-i">Over 1,000 students have completed our Cheese Mastery class</div>
+  <br>
+
+  <div id="bar-graph02" class="content anm">
+    <h2 class="c-title"></h2>
+    <div class="bar-graph-wrap vertical">
+      <div class="graph gr1">
+        <span class="name">2018</span>
+        <span class="number">68</span>
+      </div>
+      <div class="graph gr2">
+        <span class="name">2019</span>
+        <span class="number">145</span>
+      </div>
+      <div class="graph gr3">
+        <span class="name">2020</span>
+        <span class="number">305</span>
+      </div>
+      <div class="graph gr4">
+        <span class="name">2021</span>
+        <span class="number">642</span>
+      </div>
+      <div class="graph gr5">
+        <span class="name">2022</span>
+        <span class="number">813</span>
+      </div>
+      <div class="graph gr6">
+        <span class="name">2023</span>
+        <span class="number">1001</span>
+      </div>
+    </div>
+  </div>
+
+  </div>
+
+  <!-------------------------------------------------
+        ACHIEVEMENTS - pie chartでコース完了率などを示す
+    -------------------------------------------------->
+  <div class="space" id="achievements"></div>
+  <div class="section"></div>
+  <div class="space">Achievements</div>
+  <div class="space"></div>
+
+  <div id="pie-chart" class="content anm">
+    <h2 class="c-title"></h2>
+    <div class="pie-chart-wrap">
+      <div class="box blue">
+        <div class="percent">
+          <svg>
+            <circle class="base" cx="75" cy="75" r="70"></circle>
+            <circle class="line" cx="75" cy="75" r="70"></circle>
+          </svg>
+          <div class="number">
+            <h3 class="title">88<span>%</span></h3>
+          </div>
+          <p class="text">Net Promoter Score</p>
+        </div>
+      </div>
+      <div class="box red">
+        <div class="percent">
+          <svg>
+            <circle class="base" cx="75" cy="75" r="70"></circle>
+            <circle class="line" cx="75" cy="75" r="70"></circle>
+          </svg>
+          <div class="number">
+            <h3 class="title">65<span>%</span></h3>
+          </div>
+          <p class="text">Completion</p>
+        </div>
+      </div>
+      <div class="box green">
+        <div class="percent">
+          <svg>
+            <circle class="base" cx="75" cy="75" r="70"></circle>
+            <circle class="line" cx="75" cy="75" r="70"></circle>
+          </svg>
+          <div class="number">
+            <h3 class="title">27<span>%</span></h3>
+          </div>
+          <p class="text">M.O.F.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-------------------------------------------------
+        ACCESS
+    -------------------------------------------------->
+  <div class="space" id="access"></div>
+  <div class="section"></div>
+  <div class="space">Access</div>
+  <div class="space"></div>
+  <div class="map">
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3241.3944329234296!2d139.71146137623072!3d35.66728873073899!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f5!3m3!1m2!1s0x60188c9faa249f2b%3A0x3563e92b2a0598d3!2s3-ch%C5%8Dme-5-6%20Kitaaoyama%2C%20Minato%20City%2C%20Tokyo%20107-0061!5e0!3m2!1sen!2sjp!4v1729150122717!5m2!1sen!2sjp"
+      width="800" height="400" style="border:0" allowfullscreen="" loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </iframe>
+  </div>
+
+
+
+
+  <!-------------------------------------------------
+        CONTACT
+    -------------------------------------------------->
+  <div class="space" id="contact"></div>
+  <div class="section"></div>
+  <div class="space">Contact</div>
+  <div class="space"></div>
+
+  <div class="contact-container">
+    <div class="form">
+      <form>
+        <table>
+          <tr>
+            <th class="hissu"><label>Name</label></th>
+            <td><input type="text" class="input"></td>
+          </tr>
+          <tr>
+            <th><label>Tel</label></th>
+            <td><input type="text" class="input"></td>
+          </tr>
+          <tr>
+            <th><label>How did you know about us?</label></th>
+            <td>
+              <select name="" id="" placeholder="Select">
+                <option value="" disabled selected style="display:none;">Select</option>
+                <option value="">Serch engine</option>
+                <option value="">Social media</option>
+                <option value="">TV advertisement</option>
+                <option value="">Word of mouth</option>
+                <option value="">Referral</option>
+                <option value="">Other</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <th class="hissu" class="input"><label>Inquery</label></th>
+            <td><textarea></textarea></td>
+          </tr>
+        </table>
+        <div class="buttonwrap">
+          <input type="submit" value="Submit" class="btn">
+        </div>
+      </form>
+
+    </div>
+  </div>
+  <div class="space"></div>
+  <div class="space"></div>
+  <div class="footer">copyrights 2016 Cheeese Academy Tokyo All Rights Reserved.</div>
+  <div class="space"></div>
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="./js/cheese-academy.js"></script>
+
+</body>
+
+</html>
